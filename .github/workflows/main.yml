@@ -1,0 +1,23 @@
+name: Pull upstream
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 * * * *'
+jobs:
+  release_pull_request:
+    runs-on: ubuntu-latest
+    name: release_pull_request
+    steps:
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: Create PR to branch
+      uses: gorillio/github-action-sync@master
+      with: 
+        upstream: git@github.com:donmezgel/binance-bot.git
+        upstream_branch: main
+        branch: main
+        pr_labels: upstream
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITBOT_EMAIL: senols@gmail.com
+        DRY_RUN: false
