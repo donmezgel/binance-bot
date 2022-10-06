@@ -15,8 +15,8 @@ jobs:
       uses: gorillio/github-action-sync@master
       with: 
         upstream: git@github.com:donmezgel/binance-bot.git
-        upstream_branch: main
-        branch: main
+        upstream_branch: master
+        branch: master
         pr_labels: upstream
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
