@@ -10,6 +10,6 @@ pip install -r requirements.txt
 
 python -m binance_trade_bot
 
-Detaylı anlatım;
+Detaylı anlatım:
 
 https://blockchaindanismanlik.com/binance-bot-kurulumu/
